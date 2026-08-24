@@ -24,25 +24,31 @@ export function avancar(inicio: No | null, passos: number): No | null {
 
 // TODO F03-A01
 export function conectar(primeiro: No, segundo: No): No {
-  return TODO<No>("F03-A01");
+  primeiro.proximo = segundo;
+  return primeiro;
 }
 
 // TODO F03-A02
 export function formarTrio(primeiro: No, segundo: No, terceiro: No): No {
-  return TODO<No>("F03-A02");
+  primeiro.proximo = segundo;
+  segundo.proximo = terceiro;
+  return primeiro;
 }
 
 // TODO F03-A03
 export function inserirNoInicio(inicio: No | null, valor: string): No {
-  return TODO<No>("F03-A03");
+  const novoNo = criarNo(valor);
+  novoNo.proximo = inicio;
+  return novoNo;
 }
 
 // TODO F03-A04
 export function acessoDireto(valores: string[], indice: number): string {
-  return TODO<string>("F03-A04");
+  return valores[indice];
 }
 
 // TODO F03-A05
 export function quartoPorPercurso(inicio: No | null): string | undefined {
-  return TODO<string | undefined>("F03-A05");
+  const quartoNo = avancar(inicio, 3);
+  return quartoNo?.valor;
 }
